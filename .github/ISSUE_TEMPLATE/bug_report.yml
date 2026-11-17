@@ -1,0 +1,51 @@
+name: Bug report
+description: Something in a template does not work as expected
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: dropdown
+    id: template
+    attributes:
+      label: Template
+      options:
+        - Lampy20_OSC_2256x1504_modern_v3.tosc
+        - Lampy40_OSC_2256x1504_modern_v1.tosc
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page and control
+      placeholder: "e.g. Groups → Even / Odd"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: console
+    attributes:
+      label: Console model and software version
+      placeholder: "e.g. LAMPY 20 2U, software 1.x"
+    validations:
+      required: true
+  - type: input
+    id: touchosc
+    attributes:
+      label: TouchOSC version and platform
+      placeholder: "e.g. TouchOSC 1.3 on iPad / Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: osc-log
+    attributes:
+      label: OSC messages (optional)
+      description: What the console shows under "Last received command", or a log from Protokol.
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots (optional)

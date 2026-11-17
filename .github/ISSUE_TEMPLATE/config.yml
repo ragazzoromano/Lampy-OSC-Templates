@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: LAMPY console support (Showtec / Highlite)
+    url: https://www.highlite.com
+    about: Questions about the console itself, its firmware or its OSC implementation.
+  - name: TouchOSC documentation (Hexler)
+    url: https://hexler.net/touchosc
+    about: Questions about installing or using the TouchOSC app.

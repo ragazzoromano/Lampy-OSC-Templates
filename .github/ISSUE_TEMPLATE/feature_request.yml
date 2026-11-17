@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a new page, control or console version
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: dropdown
+    id: template
+    attributes:
+      label: Template
+      multiple: true
+      options:
+        - Lampy20_OSC_2256x1504_modern_v3.tosc
+        - Lampy40_OSC_2256x1504_modern_v1.tosc
+        - New template
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What do you want to do during a show that the template doesn't support?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Which page, which controls, and which OSC addresses (see the OSC chapter of the LAMPY manual).
+    validations:
+      required: true
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to implement this myself once it is accepted
