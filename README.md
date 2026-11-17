@@ -53,17 +53,16 @@ Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the con
 
 ## Known limitations
 
-These commands come from the LAMPY manual (OSC chapter) but have not yet been confirmed on a console. Please report results in an issue.
+These commands come from the LAMPY manual - OSC chapter.
 
 - **Direct MFF mode buttons** – The manual is ambiguous about the address, so Fixture, Group and Scene send both `/lampy/mff/<mode>` and `/lampy/mff/mode/<mode>`. *Next Mode* always works as a fallback.
 - **Selection tools** – `/lampy/programmer/select/all_none`, `even_odd` and `first_second_half` were not part of the original template.
-- **Pan/Tilt pad** – Whether the console treats `pan_tilt` as absolute or relative positioning is not documented.
 
 ## Changes from the original Showtec template
 
 - Fixed 111 misspelled receive addresses (`/lmpy/...` → `/lampy/...`), which kept playback/MFF names, the Fan and Clear LEDs and encoder texts from updating.
 - Removed duplicate labels stacked on the same control.
-- Rescaled from 1024 × 768 to 2256 × 1504 and aligned every control to an 8 px grid.
+- Rescaled and aligned every control to an 8 px grid.
 - Rebuilt *All Faders* for full-width faders, added the *Groups* and *Pan/Tilt* pages, and split MFF 11-30 into a LAMPY 40-only page.
 - New dark colour scheme with outlined, rounded controls.
 
@@ -85,4 +84,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## Disclaimer
 
-Based on the TouchOSC example file published by Showtec / Highlite International for the LAMPY series. This project is not affiliated with or endorsed by Showtec, Highlite International or Hexler. LAMPY and Showtec are trademarks of Highlite International; TouchOSC is a trademark of Hexler. Test every template on your own system before using it in a live show.
+Based on the TouchOSC example file published by Showtec for the LAMPY series. This is an independent community project and is not affiliated with, endorsed by or supported by Showtec, Highlite International or Hexler.
+LAMPY, Showtec and TouchOSC are trademarks of their respective owners. They are used here only to identify the compatible hardware and software.
+The templates are provided as is, without warranty of any kind. Test every template on your own system before using it in a live show.
