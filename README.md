@@ -10,8 +10,8 @@ Modern TouchOSC layouts for the **Showtec LAMPY 20** and **LAMPY 40** lighting c
 
 | File | Console | Pages |
 |---|---|---|
-| [`templates/Lampy20_OSC_2256x1504_modern_v3.tosc`](templates/Lampy20_OSC_2256x1504_modern_v3.tosc) | LAMPY 20 (10 multi-function faders) | All Faders · Virtual Executors · Programmer · Groups · COOL STUFF · Pan/Tilt |
-| [`templates/Lampy40_OSC_2256x1504_modern_v1.tosc`](templates/Lampy40_OSC_2256x1504_modern_v1.tosc) | LAMPY 40 (30 multi-function faders) | All Faders · **MFF 11-30** · Virtual Executors · Programmer · Groups · COOL STUFF · Pan/Tilt |
+| [`templates/Lampy20_OSC_2256x1504_modern.tosc`](templates/Lampy20_OSC_2256x1504_modern.tosc) | LAMPY 20 (10 multi-function faders) | All Faders · Virtual Executors · Programmer · Groups · COOL STUFF · Pan/Tilt |
+| [`templates/Lampy40_OSC_2256x1504_modern.tosc`](templates/Lampy40_OSC_2256x1504_modern.tosc) | LAMPY 40 (30 multi-function faders) | All Faders · **MFF 11-30** · Virtual Executors · Programmer · Groups · COOL STUFF · Pan/Tilt |
 
 Both files share the same design, grid and OSC commands. The only differences are the extra **MFF 11-30** page and the 30 select buttons on the **Groups** page in the LAMPY 40 version.
 
