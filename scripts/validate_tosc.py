@@ -9,6 +9,7 @@ A .tosc file is zlib-compressed XML. For every file this script checks that:
   * every OSC message that is sent uses a /lampy/... address
 Exits with status 1 if any check fails.
 """
+import glob
 import sys
 import zlib
 import xml.etree.ElementTree as ET
@@ -73,7 +74,9 @@ def check(path):
     return errors
 
 
-def main(paths):
+def main(args):
+    # Windows shells don't expand wildcards, so expand them here.
+    paths = [p for a in args for p in (sorted(glob.glob(a)) or [a])]
     if not paths:
         print(__doc__)
         return 2
