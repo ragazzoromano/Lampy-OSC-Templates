@@ -74,7 +74,7 @@ Every change to this repository starts with an issue and is delivered through a 
 1. **Open an issue** – Choose *Bug report* (something wrong in a template) or *Feature request* (new page, control or console version). Blank issues are disabled, so the forms collect the console model, TouchOSC version and platform.
 2. **Wait for agreement** – A maintainer labels the issue and confirms the change before work starts. This avoids duplicate or conflicting layout edits.
 3. **Fork and branch** – Create a branch named after the issue, for example `42-add-cue-list-page`.
-4. **Edit the template** – Edit the `.tosc` files in the TouchOSC editor with the grid set to 8 px. Bump the version in the file name only when a maintainer asks for it.
+4. **Edit the template** – Edit the `.tosc` files in the TouchOSC editor with the grid set to 8 px. 
 5. **Open a pull request** – Use the pull request template and write `Closes #<issue number>` in the description. Add a screenshot of every page you changed.
 6. **Checks** – Two automated checks must pass:
    - *PR links an issue*: the description contains `Closes`, `Fixes` or `Resolves` followed by `#<number>`.
