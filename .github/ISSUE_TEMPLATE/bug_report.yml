@@ -8,8 +8,8 @@ body:
     attributes:
       label: Template
       options:
-        - Lampy20_OSC_2256x1504_modern_v3.tosc
-        - Lampy40_OSC_2256x1504_modern_v1.tosc
+        - Lampy20_OSC_2256x1504_modern.tosc
+        - Lampy40_OSC_2256x1504_modern.tosc
     validations:
       required: true
   - type: input
