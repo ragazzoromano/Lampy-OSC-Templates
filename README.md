@@ -17,10 +17,10 @@ Both files share the same design, grid and OSC commands. The only differences ar
 
 ### Pages
 
-- **All Faders** – Multi-function faders 1-10 and playback faders 1-10 across the full width, each with its flash button and name. The right column holds MFF Mode, Next/Prev Page, the Master fader, Back, Pause and Go.
+- **All Faders** – Multi-function faders 1-10 and playback faders 1-10 across the full width, each with its flash button and name. Prev Page and Next Page for the playback faders sit above them, with the playback page name in between. The right column holds MFF Mode, the Master fader, Back, Pause and Go.
 - **MFF 11-30** *(LAMPY 40 only)* – Multi-function faders 11-20 and 21-30 with flash buttons, names and MFF Mode.
-- **Virtual Executors** – The 40 virtual executors, Chase Speed, Grand Master, Global FX Speed and Global FX Size.
-- **Programmer** – Blind, Highlight, fixture Previous/Next, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Shift, Fan, Clear) and MFF buttons 1-10.
+- **Virtual Executors** – The 40 virtual executors with their names, Chase Speed, Grand Master, Global FX Speed and Global FX Size.
+- **Programmer** – Blind, Highlight, fixture Previous/Next, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Fader Mode, Shift, Fan, Clear) and MFF buttons 1-10.
 - **Groups** – One large select button per multi-function fader (10 or 30), direct MFF mode buttons (Fixture, Group, Scene, Next Mode) and selection tools (All/None, Even/Odd, 1st/2nd Half, Previous, Next, Highlight, Clear). The MFF buttons select or deselect groups in Group mode and fixtures in Fixture mode.
 - **COOL STUFF** – The original Showtec page with a pan/tilt pad and 16 executors.
 - **Pan/Tilt** – A full-screen XY pad (`/lampy/programmer/pan_tilt`) for follow-spot style tracking of the selected moving heads.
@@ -49,7 +49,7 @@ Both files share the same design, grid and OSC commands. The only differences ar
 4. **Load the template** – Open the `.tosc` file for your console and press Play.
 5. **Test** – Move a fader and check *Last received command* on the console's OSC page.
 
-Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the console sends its feedback to TouchOSC.
+Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the console sends its feedback to TouchOSC. Long playback, MFF, executor and group names wrap onto several lines, and the text gets smaller until the whole name fits the button.
 
 ## Known limitations
 
@@ -57,6 +57,7 @@ These commands come from the LAMPY manual - OSC chapter.
 
 - **Direct MFF mode buttons** – The manual is ambiguous about the address, so Fixture, Group and Scene send both `/lampy/mff/<mode>` and `/lampy/mff/mode/<mode>`. *Next Mode* always works as a fallback.
 - **Selection tools** – `/lampy/programmer/select/all_none`, `even_odd` and `first_second_half` were not part of the original template.
+- **Playback page name** – The label above the playback faders listens to `/lampy/pbf/page/name`, taken from the TouchOSC template for LAMPY software v2.2. On older console software it keeps showing *Playback Faders*.
 
 ## Changes from the original Showtec template
 
@@ -65,6 +66,8 @@ These commands come from the LAMPY manual - OSC chapter.
 - Rescaled and aligned every control to an 8 px grid.
 - Rebuilt *All Faders* for full-width faders, added the *Groups* and *Pan/Tilt* pages, and split MFF 11-30 into a LAMPY 40-only page.
 - New dark colour scheme with outlined, rounded controls.
+- Name labels wrap and shrink long names, as in the TouchOSC template for LAMPY software v2.2.
+- Fixed virtual executor 6, which showed the name of executor 5.
 
 ## Contributing
 
