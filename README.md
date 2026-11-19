@@ -61,6 +61,7 @@ These commands come from the LAMPY manual - OSC chapter.
 ## Changes from the original Showtec template
 
 - Fixed 111 misspelled receive addresses (`/lmpy/...` → `/lampy/...`), which kept playback/MFF names, the Fan and Clear LEDs and encoder texts from updating.
+- The MFF *Mode* label on the Programmer page now receives `/lampy/mff/mode/name` (manual V2.1, section 9.1.5) instead of `/lampy/mff/mode`, so it shows the current mode name, and its background is off so it can't cover the text.
 - Removed duplicate labels stacked on the same control.
 - Rescaled and aligned every control to an 8 px grid.
 - Rebuilt *All Faders* for full-width faders, added the *Groups* and *Pan/Tilt* pages, and split MFF 11-30 into a LAMPY 40-only page.
