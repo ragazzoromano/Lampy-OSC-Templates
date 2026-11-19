@@ -21,7 +21,7 @@ Both files share the same design, grid and OSC commands. The only differences ar
 - **MFF 11-30** *(LAMPY 40 only)* – Multi-function faders 11-20 and 21-30 with flash buttons, names and MFF Mode.
 - **Virtual Executors** – The 40 virtual executors, Chase Speed, Grand Master, Global FX Speed and Global FX Size.
 - **Programmer** – Blind, Highlight, fixture Previous/Next, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Shift, Fan, Clear) and MFF buttons 1-10.
-- **Groups** – One large select button per multi-function fader (10 or 30), direct MFF mode buttons (Fixture, Group, Scene, Next Mode) and selection tools (All/None, Even/Odd, 1st/2nd Half, Previous, Next, Highlight, Clear). The MFF buttons select or deselect groups in Group mode and fixtures in Fixture mode.
+- **Groups** – One large select button per multi-function fader (10 or 30), direct MFF mode buttons (Fixture, Group, Scene, Next Mode) with a *Mode* label that shows the current mode name (`/lampy/mff/mode/name`), and selection tools (All/None, Even/Odd, 1st/2nd Half, Previous, Next, Highlight, Clear). The MFF buttons select or deselect groups in Group mode and fixtures in Fixture mode.
 - **COOL STUFF** – The original Showtec page with a pan/tilt pad and 16 executors.
 - **Pan/Tilt** – A full-screen XY pad (`/lampy/programmer/pan_tilt`) for follow-spot style tracking of the selected moving heads.
 
@@ -55,7 +55,7 @@ Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the con
 
 These commands come from the LAMPY manual - OSC chapter.
 
-- **Direct MFF mode buttons** – The manual is ambiguous about the address, so Fixture, Group and Scene send both `/lampy/mff/<mode>` and `/lampy/mff/mode/<mode>`. *Next Mode* always works as a fallback.
+- **Direct MFF mode buttons** – Fixture, Group and Scene send `/lampy/mff/mode/fixture`, `/lampy/mff/mode/group` and `/lampy/mff/mode/scene` (1 = press, 0 = release), as documented in the LAMPY 20/40 user manual V2.1, section 9.1.5 *OSC Command Specification*. They also still send `/lampy/mff/<mode>`, which the manual does not list. The extra message is harmless, since the console is not expected to act on an undocumented address, so it was left in place. *Next Mode* always works as a fallback.
 - **Selection tools** – `/lampy/programmer/select/all_none`, `even_odd` and `first_second_half` were not part of the original template.
 
 ## Changes from the original Showtec template
