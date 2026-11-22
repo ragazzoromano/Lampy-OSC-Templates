@@ -17,10 +17,10 @@ Both files share the same design, grid and OSC commands. The only difference is 
 
 ### Pages
 
-- **All Faders** – Multi-function faders 1-10 and playback faders 1-10 across the full width, each with its flash button and name. Prev Page and Next Page for the playback faders sit above them, with the playback page name in between. Every fader shows its position as a percentage. The right column holds MFF Mode, the Master fader, Back, Pause and Go.
-- **MFF 11-30** *(LAMPY 40 only)* – Multi-function faders 11-20 and 21-30 with flash buttons, names, percentages and MFF Mode.
-- **Virtual Executors** – The 40 virtual executors with their names, Chase Speed, Grand Master, Global FX Speed and Global FX Size.
-- **Programmer** – Blind, Highlight, fixture Previous/Next, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Fader Mode, Shift, Fan, Clear), MFF buttons 1-10 and playback buttons 1-10 with Prev Page, Next Page and the playback page name.
+- **All Faders** – Multi-function faders 1-10 and playback faders 1-10 across the full width, each with its flash button and name. Prev Page and Next Page for the playback faders sit above them, with the playback page name in between. Every fader shows its position as a percentage. The right column holds MFF Mode with the current mode name, the Master fader, Back, Pause and Go.
+- **MFF 11-30** *(LAMPY 40 only)* – Multi-function faders 11-20 and 21-30 with flash buttons, names, percentages and MFF Mode with the current mode name.
+- **Virtual Executors** – The 40 virtual executors with their names, Prev Page, Template and Next Page with the executor page name, Chase Speed, Grand Master, Global FX Speed and Global FX Size.
+- **Programmer** – Blind, Highlight, fixture Previous/Next, All/None, Even/Odd, 1st/2nd Half, the console command line with its error LED, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Fader Mode with the current mode name, Shift, Fan, Clear), MFF buttons 1-10 and playback buttons 1-10 with Prev Page, Next Page and the playback page name.
 - **COOL STUFF** – The original Showtec page with a pan/tilt pad and 16 executors.
 - **Pan/Tilt** – A full-screen XY pad (`/lampy/programmer/pan_tilt`) for follow-spot style tracking of the selected moving heads.
 
@@ -46,7 +46,7 @@ Both files share the same design, grid and OSC commands. The only difference is 
 4. **Load the template** – Open the `.tosc` file for your console and press Play.
 5. **Test** – Move a fader and check *Last received command* on the console's OSC page.
 
-Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the console sends its feedback to TouchOSC. Long playback, MFF and executor names wrap onto several lines, and the text gets smaller until the whole name fits the button.
+Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the console sends its feedback to TouchOSC. Long playback, MFF and executor names wrap onto several lines, and the text gets smaller until the whole name fits the button. A bar at the bottom of each playback, MFF and executor button shows its state: green running, yellow fading out, orange paused, gray released.
 
 ## Known limitations
 
@@ -54,6 +54,7 @@ These commands come from the LAMPY manual - OSC chapter.
 
 - **No Groups page** – The OSC command list in the LAMPY manual (V2.1) has no group list and no command to select a group by number, so the templates cannot show the console's groups. Groups assigned to the multi-function faders are reachable from the MFF buttons in Group mode.
 - **Selection tools** – `/lampy/programmer/select/all_none`, `even_odd` and `first_second_half` were not part of the original template.
+- **LAMPY software 2.2 feedback** – The state bars (`/lampy/pbf|mff|virtual_executor/<n>/state`) and the virtual executor pages (`/lampy/virtual_executor/page/...`) come from the TouchOSC template for LAMPY software v2.2 and are not in the V2.1 manual. On older software the bars stay hidden and the executor page buttons do nothing.
 - **Playback page name** – The label above the playback faders listens to `/lampy/pbf/page/name`, taken from the TouchOSC template for LAMPY software v2.2. On older console software it keeps showing *Playback Faders*.
 
 ## Changes from the original Showtec template
