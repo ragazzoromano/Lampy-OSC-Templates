@@ -17,11 +17,11 @@ Both files share the same design, grid and OSC commands. The only differences ar
 
 ### Pages
 
-- **All Faders** – Multi-function faders 1-10 and playback faders 1-10 across the full width, each with its flash button and name. Prev Page and Next Page for the playback faders sit above them, with the playback page name in between. The right column holds MFF Mode, the Master fader, Back, Pause and Go.
-- **MFF 11-30** *(LAMPY 40 only)* – Multi-function faders 11-20 and 21-30 with flash buttons, names and MFF Mode.
+- **All Faders** – Multi-function faders 1-10 and playback faders 1-10 across the full width, each with its flash button and name. Prev Page and Next Page for the playback faders sit above them, with the playback page name in between. Every fader shows its position as a percentage. The right column holds MFF Mode, the Master fader, Back, Pause and Go.
+- **MFF 11-30** *(LAMPY 40 only)* – Multi-function faders 11-20 and 21-30 with flash buttons, names, percentages and MFF Mode.
 - **Virtual Executors** – The 40 virtual executors with their names, Chase Speed, Grand Master, Global FX Speed and Global FX Size.
-- **Programmer** – Blind, Highlight, fixture Previous/Next, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Fader Mode, Shift, Fan, Clear) and MFF buttons 1-10.
-- **Groups** – One large select button per multi-function fader (10 or 30), direct MFF mode buttons (Fixture, Group, Scene, Next Mode) and selection tools (All/None, Even/Odd, 1st/2nd Half, Previous, Next, Highlight, Clear). The MFF buttons select or deselect groups in Group mode and fixtures in Fixture mode.
+- **Programmer** – Blind, Highlight, fixture Previous/Next, the 4 encoders, programmer keys (Record, Edit, Delete, attribute groups, Magic, Home, Fader Mode, Shift, Fan, Clear), MFF buttons 1-10 and playback buttons 1-10 with Prev Page, Next Page and the playback page name.
+- **Groups** – One large select button per multi-function fader (10 or 30) and selection tools (All/None, Even/Odd, 1st/2nd Half, Previous, Next, Highlight, Clear). The buttons select or deselect groups while the console's multi-function faders are in Group mode, and fixtures in Fixture mode.
 - **COOL STUFF** – The original Showtec page with a pan/tilt pad and 16 executors.
 - **Pan/Tilt** – A full-screen XY pad (`/lampy/programmer/pan_tilt`) for follow-spot style tracking of the selected moving heads.
 
@@ -55,7 +55,7 @@ Name labels (playbacks, MFFs, executors, encoder texts) stay empty until the con
 
 These commands come from the LAMPY manual - OSC chapter.
 
-- **Direct MFF mode buttons** – The manual is ambiguous about the address, so Fixture, Group and Scene send both `/lampy/mff/<mode>` and `/lampy/mff/mode/<mode>`. *Next Mode* always works as a fallback.
+- **Groups** – The OSC command list in the LAMPY manual (V2.1) has no group list and no command to select a group by number. The Groups page can only reach the groups assigned to the multi-function faders: 10 on the LAMPY 20, 30 on the LAMPY 40.
 - **Selection tools** – `/lampy/programmer/select/all_none`, `even_odd` and `first_second_half` were not part of the original template.
 - **Playback page name** – The label above the playback faders listens to `/lampy/pbf/page/name`, taken from the TouchOSC template for LAMPY software v2.2. On older console software it keeps showing *Playback Faders*.
 
