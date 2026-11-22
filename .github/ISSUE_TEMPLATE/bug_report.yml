@@ -16,7 +16,7 @@ body:
     id: page
     attributes:
       label: Page and control
-      placeholder: "e.g. Groups → Even / Odd"
+      placeholder: "e.g. Programmer → Fader Mode"
     validations:
       required: true
   - type: textarea
